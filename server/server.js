@@ -14,7 +14,7 @@ app.use(express.json());
 app.get("/api/v1/restaurants", async (req, res) => {
   try {
     //const results = await db.query("select * from restaurants");
-    console.log("we are going to get all restaurants--");
+    // console.log("we are going to get all restaurants--");
     const restaurantRatingsData = await db.query(
       "select * from restaurants left join (select restaurant_id, COUNT(*), TRUNC(AVG(rating),1) as average_rating from reviews group by restaurant_id) reviews on restaurants.id = reviews.restaurant_id;"
     );
@@ -108,7 +108,7 @@ app.put("/api/v1/restaurants/:id", async (req, res) => {
 
 app.delete("/api/v1/restaurants/:id", async (req, res) => {
   try {
-    console.log("to delete processing--", req.params.id);
+    // console.log("to delete processing--", req.params.id);
 
     // Check if the restaurant has reviews
     const restaurants_id_from_review = await db.query(

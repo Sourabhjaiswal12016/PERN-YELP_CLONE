@@ -6,7 +6,7 @@ import StarRating from "./StarRating";
 import { toast } from "react-toastify";
 const RestaurantList = (props) => {
   const { restaurants, setRestaurants } = useContext(RestaurantsContext);
-  console.log("set restaurants data from context---", restaurants);
+  // console.log("set restaurants data from context---", restaurants);
   let history = useHistory();
   useEffect(() => {
     const fetchData = async () => {
