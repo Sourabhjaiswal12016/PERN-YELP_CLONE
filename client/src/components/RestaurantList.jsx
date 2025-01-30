@@ -17,7 +17,9 @@ const RestaurantList = (props) => {
           response.data.data.restaurants
         );
         setRestaurants(response.data.data.restaurants);
-      } catch (err) {}
+      } catch (err) {
+        console.log("found error while fetching restaurants data--", err);
+      }
     };
 
     fetchData();

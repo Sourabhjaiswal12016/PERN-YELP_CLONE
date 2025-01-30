@@ -16,14 +16,16 @@ const AddReview = () => {
   const handleSubmitReview = async (e) => {
     e.preventDefault();
     try {
-      const response = await RestaurantFinder.post(`/${id}/addReview`, {
+      await RestaurantFinder.post(`/${id}/addReview`, {
         name,
         review: reviewText,
         rating,
       });
       history.push("/");
       history.push(location.pathname);
-    } catch (err) {}
+    } catch (err) {
+      console.log("found error while submitting the review---", err);
+    }
   };
   return (
     <div className="mb-2">

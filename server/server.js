@@ -139,7 +139,7 @@ app.delete("/api/v1/restaurants/:id", async (req, res) => {
     }
 
     // Send response only once after deletion is successful
-    console.log("Deleted restaurant with id, results--", results);
+    // console.log("Deleted restaurant with id, results--", results);
     return res.status(204).json({
       status: "success",
     });
